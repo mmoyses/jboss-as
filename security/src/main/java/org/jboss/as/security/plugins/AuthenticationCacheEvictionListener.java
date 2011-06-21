@@ -45,4 +45,10 @@ public class AuthenticationCacheEvictionListener implements EvictionListener<Pri
         }
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public void passivate(DomainInfo value) {
+        // do nothing
+    }
+
 }
