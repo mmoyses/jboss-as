@@ -101,8 +101,7 @@
                     <driver>h2</driver>
                     <pool></pool>
                     <security>
-                        <user-name>sa</user-name>
-                        <password>sa</password>
+                        <security-domain>ds</security-domain>
                     </security>
                 </datasource>
                 <drivers>
@@ -245,6 +244,15 @@
                 <security-domain name="other" cache-type="default">
                     <authentication>
                         <login-module code="Disabled" flag="required"/>
+                    </authentication>
+                </security-domain>
+                <security-domain name="ds" cache-type="default">
+                    <authentication>
+                        <login-module code="SecureIdentity" flag="required">
+                            <module-option name="username" value="sa"/>
+                            <module-option name="password" value="9fdd42c2a7390d3"/>
+                            <module-option name="managedConnectionFactoryName" value="jboss.jca:name=jboss/datasources/ExampleDS,service=LocalTxCM"/>
+                        </login-module>
                     </authentication>
                 </security-domain>
             </security-domains>
